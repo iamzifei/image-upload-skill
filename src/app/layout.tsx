@@ -5,12 +5,12 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  name: "MyMidjourney Image Uploader",
-  title: "MyMidjourney Image Uploader",
+  name: "ImaginePro Image Uploader",
+  title: "ImaginePro Image Uploader",
   description:
-    "Unlock the creative potential of Midjourney with MyMidjourney API. Connect via RESTful, GraphQL, and more for seamless AI image generation.",
+    "Unlock the creative potential of Midjourney with ImaginePro API. Connect via RESTful, GraphQL, and more for seamless AI image generation.",
   robots: "follow, index",
-  url: "https://mymidjourney.ai",
+  url: "https://imaginepro.ai",
   type: "website",
   keywords: [
     "Midjourney V6",
