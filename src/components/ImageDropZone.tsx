@@ -65,7 +65,7 @@ const ImageDropZone = ({ fileLimit = 10 }: ImageDropZoneProps) => {
     })
 
     if (uploadRes.status === 200) {
-      const url = `https://image.mymidjourney.ai/storage/v1/object/public/image/${encodeURIComponent(path)}`
+      const url = `https://cdn.imaginepro.ai/storage/v1/object/public/image/${encodeURIComponent(path)}`
       setUploadedImg(url)
     }
     setUploading(false)
@@ -73,7 +73,7 @@ const ImageDropZone = ({ fileLimit = 10 }: ImageDropZoneProps) => {
 
   return (
     <div className="w-96 space-y-5">
-      <Input onChange={(e) => setToken(e.target.value)} value={token} name="token" label="MyMidjourney Token" />
+      <Input onChange={(e) => setToken(e.target.value)} value={token} name="token" label="ImaginePro Token" />
       <p className="text-lg font-bold text-red-600">Note that we will only preserve your image for 24 hours!</p>
       <Dropzone
         onDrop={handleDrop}
