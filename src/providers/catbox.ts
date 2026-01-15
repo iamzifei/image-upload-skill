@@ -56,7 +56,12 @@ export class CatboxProvider implements ImageProvider {
 
     // Create blob from buffer with proper MIME type
     const blob = new Blob([buffer], { type: mimeType || "application/octet-stream" });
-    const uploadFilename = filename || `image${this.getExtension(mimeType)}`;
+
+    // Ensure filename has the correct extension based on MIME type
+    // This is critical for Catbox to return a URL with extension that browsers can display
+    const extension = this.getExtension(mimeType);
+    const baseName = filename || "image";
+    const uploadFilename = baseName.endsWith(extension) ? baseName : `${baseName}${extension}`;
     formData.append("fileToUpload", blob, uploadFilename);
 
     try {
