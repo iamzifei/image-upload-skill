@@ -1,5 +1,7 @@
 # Image Upload Skill
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A Claude Code skill for uploading images to various hosting providers and getting shareable URLs.
 
 ## Features
@@ -29,20 +31,25 @@ A Claude Code skill for uploading images to various hosting providers and gettin
 
 ## Installation
 
-### As a Claude Skill
+### As a Claude Code Skill
 
-1. Copy the `image-upload` folder to your Claude skills directory:
+1. Clone the repository:
    ```bash
-   cp -r image-upload ~/.claude/skills/
+   git clone git@github.com:iamzifei/image-upload-skill.git
+   cd image-upload-skill
    ```
 
 2. Install dependencies:
    ```bash
-   cd ~/.claude/skills/image-upload
    npm install
    ```
 
-3. (Optional) Configure providers in `~/.claude/.env`:
+3. Build the project:
+   ```bash
+   npm run build
+   ```
+
+4. (Optional) Configure providers in `.env`:
    ```bash
    IMAGE_UPLOAD_PROVIDER=catbox
    IMGBB_API_KEY=your_key_here
@@ -51,7 +58,8 @@ A Claude Code skill for uploading images to various hosting providers and gettin
 ### Standalone CLI
 
 ```bash
-cd image-upload
+git clone git@github.com:iamzifei/image-upload-skill.git
+cd image-upload-skill
 npm install
 npm run build
 ```
@@ -202,6 +210,10 @@ npm run build
 # Run tests
 npm test
 ```
+
+## Repository
+
+- **GitHub**: https://github.com/iamzifei/image-upload-skill
 
 ## License
 
