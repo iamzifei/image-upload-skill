@@ -33,35 +33,125 @@ A Claude Code skill for uploading images to various hosting providers and gettin
 
 ### As a Claude Code Skill
 
-1. Clone the repository:
-   ```bash
-   git clone git@github.com:iamzifei/image-upload-skill.git
-   cd image-upload-skill
-   ```
+Claude Code skills are installed in the `~/.claude/skills/` directory. Choose one of the following methods:
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+#### Method 1: Symlink (Recommended)
 
-3. Build the project:
-   ```bash
-   npm run build
-   ```
-
-4. (Optional) Configure providers in `.env`:
-   ```bash
-   IMAGE_UPLOAD_PROVIDER=catbox
-   IMGBB_API_KEY=your_key_here
-   ```
-
-### Standalone CLI
+This method is recommended for development as changes to the repository are immediately reflected.
 
 ```bash
+# 1. Clone the repository to your preferred location
+git clone git@github.com:iamzifei/image-upload-skill.git
+cd image-upload-skill
+
+# 2. Install dependencies and build
+npm install
+npm run build
+
+# 3. Create the skills directory if it doesn't exist
+mkdir -p ~/.claude/skills
+
+# 4. Create a symbolic link to the Claude skills folder
+ln -s "$(pwd)" ~/.claude/skills/image-upload
+
+# 5. Verify the symlink was created
+ls -la ~/.claude/skills/
+```
+
+#### Method 2: Clone Directly into Skills Folder
+
+```bash
+# 1. Create the skills directory if it doesn't exist
+mkdir -p ~/.claude/skills
+
+# 2. Clone directly into the skills folder
+git clone git@github.com:iamzifei/image-upload-skill.git ~/.claude/skills/image-upload
+
+# 3. Install dependencies and build
+cd ~/.claude/skills/image-upload
+npm install
+npm run build
+```
+
+#### Method 3: Copy Installation
+
+If you don't need git tracking:
+
+```bash
+# 1. Clone and build the project
 git clone git@github.com:iamzifei/image-upload-skill.git
 cd image-upload-skill
 npm install
 npm run build
+
+# 2. Create the skills directory and copy
+mkdir -p ~/.claude/skills
+cp -r . ~/.claude/skills/image-upload
+```
+
+### Verifying Installation
+
+After installation, verify the skill is properly set up:
+
+```bash
+# Check that SKILL.md exists in the skills folder
+cat ~/.claude/skills/image-upload/SKILL.md
+
+# The output should show the skill metadata with name: image-upload
+```
+
+When you start a new Claude Code session, the skill should be automatically available.
+
+### Configuration (Optional)
+
+Configure providers by creating a `.env` file in the skill directory or in `~/.claude/`:
+
+```bash
+# Option 1: In the skill directory
+cp ~/.claude/skills/image-upload/.env.example ~/.claude/skills/image-upload/.env
+
+# Option 2: In the Claude config directory (applies to all projects)
+cp ~/.claude/skills/image-upload/.env.example ~/.claude/.env
+```
+
+Edit the `.env` file to add your API keys:
+
+```bash
+# Default provider (catbox works without any config!)
+IMAGE_UPLOAD_PROVIDER=catbox
+
+# ImgBB - https://api.imgbb.com/
+IMGBB_API_KEY=your_key_here
+
+# Imgur - https://api.imgur.com/oauth2/addclient
+IMGUR_CLIENT_ID=your_client_id
+```
+
+### Updating the Skill
+
+If you used the symlink method:
+
+```bash
+cd /path/to/your/image-upload-skill
+git pull
+npm install
+npm run build
+```
+
+If you cloned directly into the skills folder:
+
+```bash
+cd ~/.claude/skills/image-upload
+git pull
+npm install
+npm run build
+```
+
+### Uninstalling
+
+```bash
+# Remove the skill (works for both symlink and direct installation)
+rm -rf ~/.claude/skills/image-upload
 ```
 
 ## Usage
