@@ -10,6 +10,11 @@ dist/
 
 # testing
 coverage/
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.webp
 
 # misc
 .DS_Store
