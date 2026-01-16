@@ -1,6 +1,6 @@
 ---
 name: image-upload
-description: Upload local images to hosting providers (Catbox, ImgBB, Imgur, etc.) and get shareable URLs. Use for sharing screenshots, uploading images, or getting image links.
+description: Upload images to hosting providers and get shareable URLs
 ---
 
 # Image Upload Skill
