@@ -1,5 +1,7 @@
 # Image Upload Skill
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2T024VDBG)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Claude Code skill for uploading images to various hosting providers and getting shareable URLs.
